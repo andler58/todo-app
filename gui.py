@@ -2,16 +2,18 @@ import functions
 import PySimpleGUI as gui
 import time
 
-gui.theme("DarkBlue5")
+gui.theme("LightBlue")
 
 clock = gui.Text('', key='clock')
 label = gui.Text("Type In a To-Do: ")
 input_box = gui.InputText(tooltip="Enter todo", key='todo')
-add_button = gui.Button("Add")
+add_button = gui.Button(size=2, image_source="add.png", mouseover_colors="LightBlue2",
+                        tooltip="Add todo", key="Add")
 list_box = gui.Listbox(values=functions.get_todos(), key='todos',
                        enable_events=True, size=[45, 15])
 edit_button = gui.Button('Edit')
-complete_button = gui.Button('Complete')
+complete_button = gui.Button(size=4, image_source="complete.png", mouseover_colors="LightBlue2",
+                             tooltip="Complete todo", key="Complete")
 exit_button = gui.Button('Exit')
 
 window = gui.Window('My To-Do App',
